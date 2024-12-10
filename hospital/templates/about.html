@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% include 'base.html' %}
+    {% include 'navigation.html' %}
+</head>
+<body>
+{% block content %}
+<div class="container">
+    <h1 class="text-center">About Us</h1>
+    <div class="row">
+        <div class="col-md-6">
+            <h1 class="strong">Who We Are and <br> What We Do</h1>
+            <p class="lead">
+                We are a dedicated team committed to streamlining healthcare services through our advanced
+                Hospital Management System (HMS). Our system helps manage appointments, patient records,
+                doctor schedules, and more, ensuring a seamless healthcare experience for all stakeholders.
+            </p>
+        </div>
+        <div class="col-md-6">
+            <p>
+                Our platform is designed to enhance efficiency and accessibility in hospital operations. By
+                digitizing processes like appointment scheduling, patient management, and resource allocation,
+                we aim to improve service delivery and patient satisfaction.
+            </p>
+            <p>
+                Our system leverages modern technology to ensure data security, accuracy, and compliance with
+                healthcare regulations, offering a reliable solution for hospitals and clinics of all sizes.
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="site-heading text-center">
+            <h3>Our Team</h3>
+            <p class="lead">
+                Our team consists of experienced professionals in healthcare technology, including software
+                developers, medical consultants, and support specialists. Together, we work to provide
+                innovative solutions tailored to the unique needs of the healthcare sector.
+            </p>
+            <div class="border"></div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+</body>
+{% include 'footer.html' %}
+</html>

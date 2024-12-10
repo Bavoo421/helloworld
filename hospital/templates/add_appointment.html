@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% include 'base.html' %}
+    {% include 'navigation.html' %}
+</head>
+<body>
+{% block content %}
+{% if error == "no" %}
+<script>
+    alert('Appointment Added Successfully');
+    window.location = "{% url 'view_appointment' %}";
+</script>
+{% elif error == "yes" %}
+<script>
+    alert('Failed to Add Appointment. Please Try Again.');
+</script>
+{% endif %}
+<div class="container">
+    <h2 class="text-center">Add Appointment</h2>
+    <form method="POST" action="">
+    {% csrf_token %}
+    <label>Doctor Name</label>
+    <select name="doctor" class="form-control">
+        {% for i in doc %}
+        <option value="{{ i.name }}">{{ i.name }}</option>
+        {% endfor %}
+    </select>
+    <label>Patient Name</label>
+    <select name="patient" class="form-control">
+        {% for i in patient %}
+        <option value="{{ i.name }}">{{ i.name }}</option>
+        {% endfor %}
+    </select>
+    <label>Date</label>
+    <input type="date" class="form-control" name="date">
+    <label>Time</label>
+    <input type="time" class="form-control" name="time">
+    <input type="submit" value="Submit" class="form-control btn btn-primary">
+</form>
+
+</div>
+{% endblock content %}
+</body>
+</html>
+    {% include 'footer.html' %}
